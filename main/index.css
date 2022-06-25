@@ -1,0 +1,47 @@
+.secteurs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.secteur {
+    flex: 1;
+    padding: 16px;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    min-height: 12em;
+    border-radius: 4px;
+}
+.secteur .code {
+    float: right;
+    color: rgba(0, 0, 0, .5);
+    margin: 8px;
+}
+.secteur h2 {
+    margin-left: 1em;
+    display: inline-block;
+    text-shadow: 1px 1px 0 whitesmoke, -1px 1px 0 whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke;
+}
+.secteur p, .secteur .surface, .secteur .nombreA {
+    opacity: 0;
+    transition: opacity .4s ease-out;
+}
+.secteur:hover p, .secteur:hover .surface, .secteur:hover .nombreA {
+    opacity: 1;
+}
+.secteur img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    transition: width .4s ease-out, opacity .4s ease-out;
+}
+.secteur:hover img {
+    width: 110%;
+    opacity: .5;
+}
+.secteur :not(img) {
+    position: relative;
+    z-index: 2;
+}
